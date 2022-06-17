@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<a th:href="@{/showNewBorrowForm}" class="btn btn-primary btn-sm mb-3"> Add Borrow </a>
+<table border="1" class="table table-striped table-responsive-md">
+  <thead>
+  <tr>
+    <th>Borrow Date</th>
+    <th>Member Name</th>
+    <th>Book Name</th>
+    <th> Actions </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="borrow : ${listBorrow}">
+    <td th:text="${borrow.borrowDate}"></td>
+    <td th:text="${borrow.member.name}"></td>
+    <td th:text="${borrow.book.name}"></td>
+    <td> <a th:href="@{/showFormForUpdateB/{id}(id=${borrow.id})}" class="btn btn-primary">Update</a>
+      <a th:href="@{/deleteBorrow/{id}(id=${borrow.id})}" class="btn btn-danger">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+<a th:href="@{/}"> Back to Homepage</a>
+</html>

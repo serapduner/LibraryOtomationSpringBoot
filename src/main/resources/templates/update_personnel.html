@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml" xmlns:c="">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Library Management System</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <h1>Library Management System</h1>
+    <hr>
+    <h2>Update Personnel</h2>
+
+    <form action="#" th:action="@{/savePersonnel}" th:object="${personnel}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}" />
+
+        <input type="text" th:field="*{name}" placeholder="Personnel Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{surname}" placeholder="Personnel Surname" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{gender}" placeholder="Personnel Gender" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{phoneNumber}" placeholder="Personnel Phone Number" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{email}" placeholder="Personnel E-mail" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{foreignLanguage}" placeholder="Personnel Foreign Language" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{permission}" placeholder="Personnel Permission" class="form-control mb-4 col-4">
+        <button type="submit" class="btn btn-info col-2"> Update Personnel</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/showPersonnelList}"> Back to Personnel List</a>
+</div>
+</body>
+
+</html>

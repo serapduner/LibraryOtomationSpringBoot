@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Book Management System</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div class="container my-2">
+    <h1>Library Management System</h1>
+
+
+    <a th:href="@{/showBookList}" class="btn btn-primary btn-sm mb-3"> Book List </a>
+    <a th:href="@{/showMemberList}" class="btn btn-primary btn-sm mb-3"> Member List </a>
+    <a th:href="@{/showBorrowList}" class="btn btn-primary btn-sm mb-3"> Borrow List </a>
+    <a th:href="@{/showPublisherList}" class="btn btn-primary btn-sm mb-3"> Publisher List </a>
+    <a th:href="@{/showWriterList}" class="btn btn-primary btn-sm mb-3"> Writer List </a>
+    <a th:href="@{/showPersonnelList}" class="btn btn-primary btn-sm mb-3"> Personnel List </a>
+    <a th:href="@{/showPermissionList}" class="btn btn-primary btn-sm mb-3"> Permission List </a>
+
+
+</div>
+</body>
+
+</html>
